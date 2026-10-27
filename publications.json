@@ -1,0 +1,52 @@
+{
+  "publications": [
+    {
+      "title": "Beyond the Vehicle Routing Problem: Design of Temporal Networks for Demand-Responsive Transport",
+      "authors": [
+        "Xiaoyi Wu",
+        "Ravi Seshadri",
+        "Filipe Rodrigues",
+        "Carlos Lima Azevedo",
+        "Andrea Araldo"
+      ],
+      "venue": "ICORES 2026",
+      "selected": 1,
+      "links": {
+        "Paper": "https://doi.org/10.5220/0014330400004055",
+        "Code (Python)": "https://github.com/XiaoyiWu21/TN4DRT"
+      }
+    },
+    {
+      "title": "Deep Reinforcement Learning for Day-to-Day Dynamic Tolling in Tradable Credit Schemes",
+      "authors": [
+        "Xiaoyi Wu",
+        "Ravi Seshadri",
+        "Filipe Rodrigues",
+        "Carlos Lima Azevedo"
+      ],
+      "venue": "Transportmetrica B: Transport Dynamics, 2025",
+      "selected": 1,
+      "links": {
+        "Paper": "https://doi.org/10.1080/21680566.2025.2552884",
+        "Code (Python)": "https://github.com/XiaoyiWu21/RL4TCS"
+      }
+    },
+    {
+      "title": "Joint Design of Conventional Public Transport Network and Mobility on Demand",
+      "authors": [
+        "Xiaoyi Wu",
+        "Nisrine Mouhrim",
+        "Andrea Araldo",
+        "Yves Molenbruch",
+        "Dominique Feillet",
+        "Kris Braekers"
+      ],
+      "venue": "Transportation Research Procedia, 2025",
+      "selected": 0,
+      "links": {
+        "Paper": "https://doi.org/10.1016/j.trpro.2025.04.014", 
+        "Code (C++)": "https://github.com/XiaoyiWu21/darp"
+      }
+    }
+  ]
+}

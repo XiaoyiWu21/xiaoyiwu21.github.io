@@ -1,0 +1,765 @@
+/* =========================
+   Theme
+   ========================= */
+
+:root {
+  --bg-color: #fff;
+  --text-color: #2d3748;
+  --text-secondary: #4a5568;
+  --accent-color: #4a74b9;
+  --accent-hover: #3a5c9e;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+  --accent-background: rgba(74, 116, 185, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  max-width: 848px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: var(--text-color);
+  background: var(--bg-color);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+/* =========================
+   Typography and links
+   ========================= */
+
+h1 {
+  margin: 1rem 0 0.25rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 1.75rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  margin: 1rem 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+p {
+  margin: 0.5rem 0 0.75rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================
+   Header and profile banner
+   ========================= */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Full-width image above the name and links */
+header.profile-header {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.profile-banner img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.profile-header h1 {
+  margin-top: 0;
+}
+
+/* Optional circular profile image */
+.header-image {
+  flex: 0 0 140px;
+  text-align: center;
+}
+
+.header-image img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header-image span {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.location {
+  margin: 0.35rem 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.social-links-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 1rem 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Sidebar and navigation
+   ========================= */
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 56px;
+  left: max(22px, calc(50% - 660px));
+  width: 190px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  padding-right: 18px;
+  border-right: 1px solid var(--border-color);
+}
+
+.sidebar-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.sidebar nav ul {
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sidebar-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.sidebar .filters {
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 0.5rem;
+}
+
+.sidebar .filters button {
+  text-align: left;
+}
+
+.sidebar a[aria-current="location"] {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* =========================
+   Sections and buttons
+   ========================= */
+
+section {
+  width: 100%;
+  margin-bottom: 2rem;
+  scroll-margin-top: 1rem;
+  animation: fadeIn 0.6s ease-out both;
+}
+
+button {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--accent-color);
+  background: var(--accent-background);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+button:hover:not(:disabled),
+.filters button[aria-pressed="true"] {
+  color: #fff;
+  background: var(--accent-color);
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Research and framework
+   ========================= */
+
+.research-area {
+  margin: 1.2rem 0;
+}
+
+.research-area h3,
+.service-category h3 {
+  color: var(--accent-color);
+}
+
+.research-area li {
+  margin: 0.3rem 0;
+}
+
+.decision-figure {
+  margin: 1.8rem 0 2rem;
+}
+
+.decision-figure img {
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
+.decision-figure figcaption {
+  margin-top: 0.65rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   PhD thesis
+   ========================= */
+
+.thesis-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.thesis-links a {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  color: var(--accent-color);
+  background: var(--accent-background);
+}
+
+.thesis-links a:hover {
+  color: #fff;
+  background: var(--accent-color);
+  text-decoration: none;
+}
+
+.thesis-figure {
+  margin: 1.5rem 0;
+}
+
+.thesis-figure img {
+  display: block;
+  width: 80%;
+  height: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.thesis-figure figcaption {
+  margin-top: 0.6rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.thesis-framework {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid var(--accent-color);
+  background: #f5f7fb;
+}
+
+.thesis-framework strong {
+  font-size: 0.9rem;
+}
+
+.thesis-framework span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.83rem;
+}
+
+/* =========================
+   Projects
+   ========================= */
+
+.project {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 0.8rem 0 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.project[hidden] {
+  display: none;
+}
+
+.project:hover,
+.publication-item:hover {
+  transform: translateX(3px);
+}
+
+.project-image {
+  flex-shrink: 0;
+  width: 140px;
+  height: 100px;
+  margin-top: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.project-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.project h3 {
+  margin: 0.2rem 0 0.35rem;
+}
+
+.project p {
+  font-size: 0.93rem;
+}
+
+.context {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+}
+
+.methods {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.project a {
+  font-size: 0.85rem;
+}
+
+/* =========================
+   Publications
+   ========================= */
+
+.publications-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.75rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.publications-header h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.publications-header button {
+  flex-shrink: 0;
+}
+
+.publication-item {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 0 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.pub-title {
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.pub-authors,
+.pub-venue {
+  margin-bottom: 0.4rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.highlight-name {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.pub-venue {
+  font-style: italic;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.pub-links a {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--accent-background);
+}
+
+.pub-links a:hover {
+  color: #fff;
+  background: var(--accent-color);
+  text-decoration: none;
+}
+
+/* =========================
+   News
+   ========================= */
+
+.news-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.75rem 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.news-heading h2 {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.news-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.news-controls button {
+  padding: 0.2rem 0.65rem;
+  font-size: 1rem;
+}
+
+.news-hint {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.news-container {
+  max-height: 310px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 16px;
+  border-bottom: 1px solid var(--border-color);
+  scrollbar-width: thin;
+  scrollbar-color: #9eb5d5 #f1f4f8;
+}
+
+.news-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li {
+  margin: 0.9rem 0 1.1rem;
+  padding: 0 0 0.3rem 0.9rem;
+  border-left: 2px solid #d5e0f0;
+}
+
+.news-list time {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.news-list p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   Education and service
+   ========================= */
+
+.timeline {
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline b {
+  font-size: 0.95rem;
+}
+
+.timeline small {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.service-category {
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   Footer and accessibility
+   ========================= */
+
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+
+.skip:focus {
+  top: 10px;
+  left: 10px;
+  z-index: 100;
+  padding: 10px;
+  background: #fff;
+}
+
+/* =========================
+   Animation
+   ========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================
+   Responsive layout
+   ========================= */
+
+@media (max-width: 1250px) {
+  body {
+    max-width: 1020px;
+    padding-left: 215px;
+  }
+
+  .sidebar {
+    left: 20px;
+    width: 170px;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    max-width: 848px;
+    padding: 1.25rem;
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    max-height: none;
+    padding: 0;
+    border-right: 0;
+  }
+
+  .sidebar-name {
+    display: none;
+  }
+
+  .sidebar nav ul {
+    flex-direction: row;
+    gap: 0.85rem;
+    margin: 0.75rem 0 1rem;
+  }
+
+  .sidebar .filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-projects {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .project-image {
+    width: 115px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 600px) {
+  header:not(.profile-header) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+
+  .header-image {
+    flex-basis: auto;
+  }
+
+  .header-image img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .social-links-header {
+    gap: 0.75rem;
+  }
+
+  nav ul {
+    gap: 0.8rem;
+  }
+
+  .publications-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .project:hover,
+  .publication-item:hover {
+    transform: none;
+  }
+
+  .decision-figure {
+    overflow-x: auto;
+  }
+
+  .decision-figure img {
+    min-width: 580px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    gap: 0.8rem;
+  }
+
+  .project-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .news-heading h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
