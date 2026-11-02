@@ -10,7 +10,6 @@
         "Andrea Araldo"
       ],
       "venue": "ICORES 2026",
-      "selected": 1,
       "links": {
         "Paper": "https://doi.org/10.5220/0014330400004055",
         "Code (Python)": "https://github.com/XiaoyiWu21/TN4DRT"
@@ -25,7 +24,6 @@
         "Carlos Lima Azevedo"
       ],
       "venue": "Transportmetrica B: Transport Dynamics, 2025",
-      "selected": 1,
       "links": {
         "Paper": "https://doi.org/10.1080/21680566.2025.2552884",
         "Code (Python)": "https://github.com/XiaoyiWu21/RL4TCS"
@@ -42,7 +40,6 @@
         "Kris Braekers"
       ],
       "venue": "Transportation Research Procedia, 2025",
-      "selected": 0,
       "links": {
         "Paper": "https://doi.org/10.1016/j.trpro.2025.04.014", 
         "Code (C++)": "https://github.com/XiaoyiWu21/darp"

@@ -165,7 +165,6 @@ const projects = [
    ========================= */
 
 let allPublications = [];
-let showingSelected = true;
 
 const fallbackPublications = [
   {
@@ -399,50 +398,13 @@ function createPublicationElement(publication) {
 }
 
 function renderPublications() {
-  const container = document.getElementById(
-    "publications-container"
+  const container = document.getElementById("publications-container");
+
+  if (!container) return;
+
+  container.replaceChildren(
+    ...allPublications.map(createPublicationElement)
   );
-
-  if (!container) {
-    return;
-  }
-
-  container.replaceChildren();
-
-  const publicationsToShow = allPublications.filter(
-    (publication) =>
-      !showingSelected || publication.selected === 1
-  );
-
-  if (publicationsToShow.length === 0) {
-    container.append(
-      createElement("p", "", "No publications to display.")
-    );
-  } else {
-    publicationsToShow.forEach((publication) => {
-      container.append(createPublicationElement(publication));
-    });
-  }
-
-  const heading = document.getElementById("toggle-header");
-  const toggle = document.getElementById("toggle-publications");
-
-  if (heading) {
-    heading.textContent = showingSelected
-      ? "Selected Publications"
-      : "All Publications";
-  }
-
-  if (toggle) {
-    toggle.textContent = showingSelected
-      ? "Show All"
-      : "Show Selected";
-
-    toggle.setAttribute(
-      "aria-expanded",
-      String(!showingSelected)
-    );
-  }
 }
 
 async function loadPublications() {
@@ -484,20 +446,7 @@ async function loadPublications() {
   renderPublications();
 }
 
-function initializePublicationToggle() {
-  const toggle = document.getElementById(
-    "toggle-publications"
-  );
 
-  if (!toggle) {
-    return;
-  }
-
-  toggle.addEventListener("click", () => {
-    showingSelected = !showingSelected;
-    renderPublications();
-  });
-}
 
 /* =========================
    News scrolling
@@ -570,7 +519,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderProjects();
   initializeProjectFilters();
-  initializePublicationToggle();
   initializeNewsScrolling();
   loadPublications();
 });
